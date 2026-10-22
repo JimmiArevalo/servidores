@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de administración de servidores dinámicos</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- 1. Encabezado -->
+  <header class="encabezado">
+    <h1>Panel de administración de servidores dinámicos</h1>
+    <p>Un balanceador recibe cada solicitud y la reparte por turnos entre los servidores que están activos. Desde aquí puedes ver su estado, enviar solicitudes y revisar cuántas atendió cada servidor.</p>
+  </header>
+
+  <main>
+    <!-- 2. Resumen del sistema -->
+    <section class="resumen">
+      <article class="tarjeta">
+        <span>Solicitudes atendidas</span>
+        <strong id="total-solicitudes">-</strong>
+      </article>
+      <article class="tarjeta">
+        <span>Servidores configurados</span>
+        <strong id="total-servidores">-</strong>
+      </article>
+    </section>
+
+    <!-- 3. Listado de servidores -->
+    <section class="panel">
+      <div class="panel-titulo">
+        <h2>Listado de servidores</h2>
+        <button id="btn-actualizar" type="button">Actualizar</button>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Nombre</th><th>Puerto</th><th>Estado</th></tr>
+        </thead>
+        <tbody id="tabla-servidores">
+          <tr><td colspan="3" class="vacio">Cargando servidores...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4. Gestión de solicitudes -->
+    <section class="panel">
+      <div class="panel-titulo">
+        <h2>Gestión de solicitudes</h2>
+        <button id="btn-solicitar" type="button" class="principal">Enviar solicitud</button>
+      </div>
+      <div id="resultado" class="resultado">
+        <p class="vacio">Aún no has enviado ninguna solicitud.</p>
+      </div>
+    </section>
+
+    <!-- 5. Estadísticas -->
+    <section class="panel">
+      <div class="panel-titulo">
+        <h2>Estadísticas por servidor</h2>
+      </div>
+      <div id="estadisticas">
+        <p class="vacio">Cargando estadísticas...</p>
+      </div>
+    </section>
+
+    <!-- 6. Mensajes del sistema -->
+    <section class="panel">
+      <div class="panel-titulo">
+        <h2>Mensajes del sistema</h2>
+      </div>
+      <ul id="mensajes" class="mensajes" aria-live="polite">
+        <li class="vacio">Sin mensajes por ahora.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
